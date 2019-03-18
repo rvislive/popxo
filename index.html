@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="master.css">
+  </head>
+
+<body class="design">
+  <h2>A basic JavaScript <span style="color: black">Calculator</span></h2>
+<form id="calc">
+<table>
+  <tr>
+      <td colspan=5><input name="display" onkeypress="return event.charCode >= 48 && event.charCode <= 57" type="text"></td>
+      <td style="display:none"><input name="M" type="number"></td>
+  </tr>
+  <tr>
+      <td><input type="button" value="MC" OnClick="calc.M.value=''"></td>
+      <td><input type="button" value="0" OnClick="calc.display.value+='0'"></td>
+      <td><input type="button" value="1" OnClick="calc.display.value+='1'"></td>
+      <td><input type="button" value="2" OnClick="calc.display.value+='2'"></td>
+      <td><input type="button" value="+" OnClick="calc.display.value+='+'"></td>
+  </tr>
+  <tr>
+        <td><input type=button value="MS" OnClick="calc.M.value=calc.display.value"></td>
+        <td><input type=button value="3" OnClick="calc.display.value+='3'"></td>
+        <td><input type=button value="4" OnClick="calc.display.value+='4'"></td>
+        <td><input type=button value="5" OnClick="calc.display.value+='5'"></td>
+        <td><input type=button value="-" OnClick="calc.display.value+='-'"></td>
+  </tr>
+  <tr>
+        <td><input type=button value="MR" OnClick="calc.display.value=calc.M.value"></td>
+        <td><input type=button value="6" OnClick="calc.display.value+='6'"></td>
+        <td><input type=button value="7" OnClick="calc.display.value+='7'"></td>
+        <td><input type=button value="8" OnClick="calc.display.value+='8'"></td>
+        <td><input type=button value="x" OnClick="calc.display.value+='*'"></td>
+  </tr>
+  <tr>
+        <td><input type=button value="M+" OnClick="calc.M.value=(Number(calc.M.value))+(Number(calc.display.value))"></td>
+        <td><input type=button value="9" OnClick="calc.display.value+='9'"></td>
+        <td><input type=button value="+/-" OnClick="calc.display.value=(calc.display.value==Math.abs(calc.display.value)?-(calc.display.value):Math.abs(calc.display.value))"></td>
+        <td><input type=button value="=" OnClick="calc.display.value=eval(calc.display.value)"></td>
+        <td><input type=button value="/" OnClick="calc.display.value+='/'"></td>
+  </tr>
+  <tr>
+        <td><input type=button value="1/x" OnClick="calc.display.value=1/calc.display.value"></td>
+        <td><input type=button value="." OnClick="calc.display.value+='.'"></td>
+        <td><input type=button value="x2" OnClick="calc.display.value=Math.pow(calc.display.value,2)"></td>
+        <td><input type=button value="√" OnClick="calc.display.value=Math.sqrt(calc.display.value)"></td>
+        <td><input type=button value="C" OnClick="calc.display.value=''"></td>
+  </tr>
+</table>
+</form>
+</body>
+</html>
